@@ -1,0 +1,6 @@
+Program Inputan Formulir Pendaftaran Mahasiswa Baru.
+User akan diberikan beberapa pilihan jenjang perkuliahan yang akan didaftar (d3, d4, S1, S2, S3). 
+Setelah memilih, akan ada tampilan berupa program studi di jenjang tersebut (misal : pilih jenjang D3, kemudian muncul prodi D3 TI, D3 Farmasi, dst). 
+Kemudian user akan diberikan kesempatan memilih 2 prodi dalam 1 jenjang. Setelah berhasil memilih user akan diminta untuk mengisi data diri. 
+Jika dalam mengisi data diri masih salah, user dapat mengulang pengisian kembali. 
+Namun jika sudah benar akan langsung menampilkan data diri dan pilihan program studi.
