@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Formulir
 {
-	static int menu, index = 0;
+	static int menu,index = 0;
     static Scanner input = new Scanner(System.in);
     /*
     void login (String user, String pass)
@@ -10,8 +10,8 @@ public class Formulir
         if ()
     }
     */
-
-    static void pilihProgram (String prodi[])
+    int a = 3;
+    static void pilihProgram (String jenjang[])
     {
         //moves up text/clear screen
         //for (int i = 0; i < 50; ++i) System.out.println();
@@ -24,19 +24,51 @@ public class Formulir
         switch (menu)
         {
         case 1 : 
-    		prodi[index] = "S1";
+    		jenjang[index] = "S1"; break;
         case 2 : 
-    		prodi[index] = "S2";
+    		jenjang[index] = "S2"; break;
         case 3 : 
-    		prodi[index] = "S3";
+    		jenjang[index] = "S3"; break;
         }
     } 
+    
+    static void pilihS1 (String Sar1[])
+    {
+    	System.out.println("====================================");
+        System.out.println("Pilih Program Studi: ");
+        System.out.println("1. Kedokteran");
+        System.out.println("2. Informatika");
+        System.out.println("3. Hukum");
+        System.out.println("4. Teknik Kimia");
+        System.out.println("5. Manajemen");
+        System.out.println("6. Seni Rupa");
+        menu = input.nextInt();
+        switch (menu)
+        {
+        case 1 : 
+        	Sar1[index] = "Kedokteran";break;
+        case 2 : 
+        	Sar1[index] = "Informatika";break;
+        case 3 : 
+        	Sar1[index] = "Hukum";break;
+        case 4 : 
+        	Sar1[index] = "Teknik Kimia";break;
+        case 5 : 
+        	Sar1[index] = "Manajemen";break;
+        case 6 : 
+        	Sar1[index] = "Seni Rupa";break;
+        
+        	
+        	}
+    }
     public static void main (String args[])
     {
         //DEKLARASI VARIABEL YANG DIBUTUHKAN UNTUK FORM
         String user[] = new String[10];
         String pass[] = new String[10];
         String nama[] = new String[10];
+        String jenjang[] = new String[10];
+        String sar1[] = new String[10];
         String email[] = new String[10];
         String gender[] = new String[10];
         String birth[] = new String[10];
@@ -46,7 +78,7 @@ public class Formulir
         String prodi[] = new String[10];
         
         //int index = 0;
-        System.out.println("Selamat datang, silakan isi formulir");
+        System.out.println("Selamat Datang, Silahkan Isi Formulir Untuk Pendaftaran");
         System.out.println("====================================");
         System.out.print("Masukkan nama\t\t: ");
         nama[index] = input.nextLine();
@@ -54,14 +86,34 @@ public class Formulir
         user[index] = input.nextLine();
         System.out.print("Masukkan password\t: ");
         pass[index] = input.nextLine();
+        System.out.print("Masukkan email\t: ");
+        email[index] = input.nextLine();
+        clearScreen();
         
-        pilihProgram(prodi);
+        pilihProgram(jenjang);
+        System.out.println("Pilih 2 prodi");
+        pilihS1(sar1);
         
+        System.out.println("Nama    \t\t: "+nama[index]);
+        System.out.println("Username\t\t: "+ user[index]);
+        System.out.println("Jenjang yang dipilih\t: "+jenjang[index]);
+        System.out.println("Prodi yang Dipilih  \t: "+sar1[index]);
+       
         
-        System.out.println(nama[index]);
-        System.out.println(user[index]);
-        System.out.println(pass[index]);
-        System.out.println(prodi[index]);
-
     }
+
+    private static void clearScreen() {
+    	try {
+    		if(System.getProperty("os.name").contains("Windows")) {
+    			new ProcessBuilder("cmd","\c","cls").InheritIO().Start().WaitFor();
+    		} else {
+    			System.out.print("\033\143");
+    		}
+    		
+    	} catch {
+    		System.out.println("Wah engga bisa clear screen gais");
+    	} 
+    }
+
+
 }
